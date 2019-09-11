@@ -154,7 +154,7 @@
 								-->
 								<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
 									<li class="active"><!-- HOME -->
-										<a href="#home">
+										<a href="index.html#home">
 											HOME
 										</a>
 									</li>
@@ -164,22 +164,22 @@
 										</a>
 									</li>
 									<li><!-- PORTFOLIO -->
-										<a href="#portfolio">
+										<a href="index.html#portfolio">
 											PORTFOLIO
 										</a>
 									</li>
 									<li><!-- NEWS-->
-										<a href="#news">
+										<a href="index.html#news">
 											NEWS
 										</a>
 									</li>
 									<li><!-- CLIENTS -->
-										<a href="#clients">
+										<a href="index.html#clients">
 											CLIENTS
 										</a>
 									</li>
 									<li><!-- CONTACT -->
-										<a href="#contact">
+										<a href="index.html#contact">
 											CONTACT
 										</a>
 									</li>
@@ -221,16 +221,17 @@
 					<div id = "residential" style="display:none"> 
 						<div class="col-md-4">
 								<label for="apartments_quantity">How many apartments? *</label>
-								<input required type="number" min="0" id="residential_appartments"required/>
+								<input required type="number" onchange="QuantityResidential()" min="0" id="residential_appartments"required/>
 							</div>
 							<div class="col-md-4">
 								<label for="floors_quantity">How many floors? *</label>
-								<input required type="number" min="0" id="residential_floors"required/>
+								<input required type="number" onchange="QuantityResidential()" min="0" id="residential_floors"required/>
 							</div>
 							<div class="col-md-4">
 								<label for="basements_quantity">How many basements? *</label>
 								<input required type="number" min="0" id="residential_basements"required/>
 							</div>
+							
 					</div>
 				<!-- residential setup -->
 
@@ -255,7 +256,7 @@
 							</div>
 							<div class="col-md-4">
 								<label for="shaft_quantity">How many elevator shafts? *</label>
-								<input required type="number" min="0" id="commercial_shaft" required/>
+								<input required type="number" onchange="QuantityCommercial()" min="0" id="commercial_shaft" required/>
 							</div>
 						</div>	
 				<!--commercial -->
@@ -268,19 +269,19 @@
 							</div>
 							<div class="col-md-4">
 								<label for="floors_quantity">How many floors *</label>
-								<input required type="number" min="0" id="corporate_floors" required/>
+								<input required type="number" onchange="QuantityCorporate()" min="0" id="corporate_floors" required/>
 							</div>
 							<div class="col-md-4">
-								<label for="basements_quantity">How many basements? *</label>
-								<input required type="number" min="0" id="corporate_basements" required/>
-							</div>
+									<label for="basements_quantity">How many basements? *</label>
+									<input required type="number" onchange="QuantityCorporate()" min="0" id="hybrid_basements" require/>
+								</div>
 							<div class="col-md-4">
 								<label for="parking_quantity">How many parking spots? *</label>
 								<input required type="number" min="0" id="corporate_parkings" required/>
 							</div>
 							<div class="col-md-4">
 								<label for="occupants_quantity">Maximum number of occupants per floors *</label>
-								<input required type="number" min="0" id="corporate_occupants" required/>
+								<input required type="number" onchange="QuantityCorporate()" min="0" id="corporate_occupants" required/>
 						</div>
 					</div>	
 					<!-- corporate -->
@@ -317,8 +318,8 @@
 		
 		
 		
-							<!-- gammes -->
-							<fieldset class="box-border-shadow p-20">
+					<!-- gammes -->
+						<fieldset class="box-border-shadow p-20">
 
 							<h4>CHOOSE YOUR SETUP</h4>
 
@@ -330,7 +331,7 @@
 											<div class="row m-0-bottom">
 												<div class="col-lg-12 m-0 clearfix">
 													<label class="mt-0 fs-14 fw-400 radio float-left">
-														<input id="standard" name="payment[method]" type="radio" value="1" checked="checked" />
+														<input id="standard" type="radio" name="setup" value="7566"/>
 														<i></i> <span class="fw-300">Standard setup</span>
 													</label>
 												</div>
@@ -339,7 +340,7 @@
 											<!-- premium services -->
 												<div class="col-lg-12 m-0 clearfix">
 													<label class="mt-0 fs-14 fw-400 radio float-left">
-														<input id="premium" name="payment[method]" type="radio" value="1" checked="checked" />
+														<input id="premium" type="radio" name="setup" value="12345"/>
 														<i></i> <span class="fw-300">Premium setup</span>
 													</label>
 												</div>
@@ -348,7 +349,7 @@
 												<!--excelium services-->
 												<div class="col-lg-12 m-0 clearfix">
 													<label class="mt-0 fs-14 fw-400 radio float-left">
-														<input id="excelium" name="payment[method]" type="radio" value="0" checked="checked" />
+														<input id="excelium" type="radio" name="setup" value="15400"/>
 														<i></i> <span class="fw-300">Excelium setup</span>
 													</label>
 												</div>
@@ -376,7 +377,7 @@
 										</span>
 										<span class="clearfix">
 											<span class="float-right">$0.00</span>
-											<span class="float-left">Discount:</span>
+											<span class="float-left">Quality setup price:</span>
 										</span>
 										<span class="clearfix">
 											<span class="float-right">$8.00</span>
