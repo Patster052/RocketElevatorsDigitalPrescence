@@ -1,59 +1,8 @@
-# RocketElevatorsDigitalPrescence
+//calculations forms
 
-to test number in fill box
+//residential
 
-function collect_data(building_type){
-    if( building_type == "residential") {
-        var nb_appartments = $('#residential_appartment').val();
-        console.log(residential_appartment);
-    }
-    if( building_type == "residential") {
-            var nb_appartments = $('#rresidential_floors').val();
-            console.log(residential_floors);
-        }
-
-      if( building_type == "residential") {
-        var nb_appartments = $('#residential_basements').val();
-        console.log(residential_basements);   
-      }
-}
-
-
-For collecting
-
-function collect_data(building_type){
-    if( building_type == "residential") {
-        var nb_appartments = $('#nb_appartments').val();
-        console.log(nb_appartments);
-    }
-
-
-
-
-
-
-
-//$('input').keyup(function() {
-    collect_data();
-    // compute_data();
-    // show_results();
-});
-
-$('#shaft').click(function(item){
-    var shafts = item.target.value
-    $('#shaft_numbers').text(shafts)
-})
-var shaft = document.getElementById("shaft").value;
-console.log("shaft", shaft);
-
-
-$(document).ready(function){
-    
-
-}
-
-
-function QuantityResidential() {
+    function QuantityResidential() {
 
         var Appartments = parseInt(document.getElementById("residential_appartments").value);
         var Floors = parseInt(document.getElementById("residential_floors").value);
@@ -66,7 +15,7 @@ function QuantityResidential() {
     }
 
     function QuantityCommercial(){
-        var Commercial = parseInt(document.getElementById)("commercial_shaft".value);
+        var Commercial = parseInt(document.getElementById("commercial_shaft").value);
         updateQuantity(quantity);
         RangePriceXelevator();
         InstallationTotal();
@@ -76,8 +25,8 @@ function QuantityResidential() {
 
     function QuantityCorporate(){
 
-        var Floors = parseInt(document.getElementById)("corporate_floors".value);
-        var Basements = parseint(document.getElementById)("corporate_basements".value);
+        var Floors = parseInt(document.getElementById("corporate_floors").value);
+        var Basements = parseint(document.getElementById("corporate_basements").value);
         var MaxOccupants = parseInt(document.getElementById)("corporate_occupants".value);
         var total = Math.ceil((MaxOccupants/Floors)*(Floors+Basements));
         quantity = total/1000;
@@ -98,7 +47,3 @@ function QuantityResidential() {
         updateQuantity(quantity);
         InstallationTotal();
     }
-
-
-
- 

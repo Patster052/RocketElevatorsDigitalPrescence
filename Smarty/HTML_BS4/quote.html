@@ -159,7 +159,7 @@
 										</a>
 									</li>
 									<li><!-- SERVICES -->
-										<a href="index-onepage-construction.html#services">
+										<a href="index.html#services">
 											SERVICES
 										</a>
 									</li>
@@ -205,7 +205,7 @@
 				<div class="col">
 					<div class="col-md-15 col-sm-15">
 						<label class="mt-0 fs-14 fw-400" for="building_type">Building types *</label>
-						<select id="building_type" name="building_type" class="form-control pointer required">
+						<select id="building_type" class="form-control pointer required">
 							<option value="">Select...</option>
 							<option value="residential">Residential</option>
 							<option value="commercial">Commercial</option>
@@ -216,147 +216,147 @@
 				</div>
 			</div>
 
-			<form action="php/contact.php" method="post" enctype="multipart/form-data">
-				<fieldset>
-					<input type="hidden" name="action" value="contact_send" />
-
-				<!-- residential setup -->
+			<!-- residential setup -->
 				<section>
 					<div id = "residential" style="display:none"> 
 						<div class="col-md-4">
-								<label for="apartments:quantity">How many apartments? *</label>
-								<input required type="text" value="" class="form-control" name="contact[residential][required]" id="contact:residential">
+								<label for="apartments_quantity">How many apartments? *</label>
+								<input required type="number" min="0" id="residential_appartments"required/>
 							</div>
 							<div class="col-md-4">
-								<label for="floors:quantity">How many floors? *</label>
-								<input required type="text" value="" class="form-control" name="contact[residential][required]" id="contact:residential">
+								<label for="floors_quantity">How many floors? *</label>
+								<input required type="number" min="0" id="residential_floors"required/>
 							</div>
 							<div class="col-md-4">
-								<label for="basements:quantity">How many basements? *</label>
-								<input type="text" value="" class="form-control" name="contact[residential][required]" id="contact:residential">
+								<label for="basements_quantity">How many basements? *</label>
+								<input required type="number" min="0" id="residential_basements"required/>
 							</div>
 					</div>
-				</section>
 				<!-- residential setup -->
 
 				<!-- commercial setup -->
-				<section>
-					<div id = "commercial" style="display:none"> 
+						<div id = "commercial" style="display:none"> 
 							<div class="col-md-4">
-								<label for="businesses:quantity">How many renting businesses? *</label>
-								<input required type="text" value="" class="form-control" name="contact[commercial][required]" id="contact:commercial">
+								<label for="businesses_quantity">How many renting businesses? *</label>
+								<input required type="number" min="0" id="commercial_business" required/>
 							</div>
 							<div class="col-md-4">
-								<label for="floors:quantity">How many floors? *</label>
-								<input required type="text" value="" class="form-control" name="contact[commercial][required]" id="contact:commercial">
+								<label for="floors_quantity">How many floors? *</label>
+								<input required type="number" min="0" id="commercial_floors" required/>
 							</div>
 							<div class="col-md-4">
-								<label for="basements:quantity">How many basements? *</label>
-								<input type="text" value="" class="form-control" name="contact[commercial][required]" id="contact:commercial">
+								<label for="basements_quantity">How many basements? *</label>
+								<input required type="number" min="0" id="commercial_basements" required/>
 							</div>				
 	
 							<div class="col-md-4">
-								<label for="parking:quantity">How many parking spots? *</label>
-								<input required type="text" value="" class="form-control" name="contact[commercial][required]" id="contact:commercial">
+								<label for="parking_quantity">How many parking spots? *</label>
+								<input required type="number" min="0" id="commercial_parking" required/>
 							</div>
 							<div class="col-md-4">
-								<label for="shaft:quantity">How many elevator shafts? *</label>
-								<input required type="text" value="" class="form-control" name="contact[commercial][required]" id="contact:commercial">
+								<label for="shaft_quantity">How many elevator shafts? *</label>
+								<input required type="number" min="0" id="commercial_shaft" required/>
 							</div>
-					</section>
+						</div>	
 				<!--commercial -->
 
 				<!-- corporate -->
-					<section>
 						<div id = "corporate" style="display:none"> 
 							<div class="col-md-4">
-								<label for="corporate_businesses:quantity">How many renting businesses? *</label>
-								<input type="text" value="" class="form-control" name="contact[corporate][required]" id="contact:corporate">
+								<label for="corporate_quantity">How many businesses? *</label>
+								<input required type="number" min="0" id="corporate_business" required/>
 							</div>
 							<div class="col-md-4">
-								<label for="floors:quantity">How many floors *</label>
-								<input required type="text" value="" class="form-control" name="contact[corporate][required]" id="contact:corporate">
+								<label for="floors_quantity">How many floors *</label>
+								<input required type="number" min="0" id="corporate_floors" required/>
 							</div>
 							<div class="col-md-4">
-								<label for="basements:quantity">How many basements? *</label>
-								<input required type="text" value="" class="form-control" name="contact[corporate][required]" id="contact:corporate">
+								<label for="basements_quantity">How many basements? *</label>
+								<input required type="number" min="0" id="corporate_basements" required/>
 							</div>
 							<div class="col-md-4">
-								<label for="parking:quantity">How many parking spots? *</label>
-								<input type="text" value="" class="form-control" name="contact[corporate][required]" id="contact:corporate">
+								<label for="parking_quantity">How many parking spots? *</label>
+								<input required type="number" min="0" id="corporate_parkings" required/>
 							</div>
 							<div class="col-md-4">
-								<label for="occupants:quantity">Maximum number of occupants per floors *</label>
-								<input required type="text" value="" class="form-control" name="contact[corporate][required]" id="contact:corporate">
+								<label for="occupants_quantity">Maximum number of occupants per floors *</label>
+								<input required type="number" min="0" id="corporate_occupants" required/>
 						</div>
-					</section>	
+					</div>	
 					<!-- corporate -->
 
 					<!-- hybrid -->
-					<section>
 						<div id = "hybrid" style="display:none"> 
 							<div class="col-md-4">
-								<label for="hybrid_businesses:quantity">How many businesses? *</label>
-								<input required type="email" value="" class="form-control" name="contact[hybrid][required]" id="contact:hybrid">
+								<label for="hybrid_quantity">How many businesses? *</label>
+								<input required type="number" min="0" id="hybrid_businesses" require/>
 							</div>
 							<div class="col-md-4">
-								<label for="floors:quantity">How many floors? *</label>
-								<input type="text" value="" class="form-control" name="contact[hybrid]" id="contact:hybrid">
+								<label for="floors_quantity">How many floors? *</label>
+								<input required type="number" min="0" id="hybrid_floors" require/>
 							</div>
 							<div class="col-md-4">
-								<label for="basements:quantity">How many basements? *</label>
-								<input required type="text" value="" class="form-control" name="contact[hybrid][required]" id="contact:hybrid">
+								<label for="basements_quantity">How many basements? *</label>
+								<input required type="number" min="0" id="hybrid_basements" require/>
 							</div>
 							<div class="col-md-4">
-								<label for="contact:hybrid">How many parking spots? *</label>
-								<input required type="text" value="" class="form-control" name="contact[hybrid][required]" id="contact:hybrid">
+								<label for="parkings_quantity">How many parking spots? *</label>
+								<input required type="number" min="0" id="hybrid_parkings" require/>
 							</div>
 							<div class="col-md-4">
-								<label for="occupants:quantity">Maximum number of occupants per floors *</label>
-								<input type="text" value="" class="form-control" name="contact[hybrid][required]" id="contact:hybrid">
+								<label for="occupants_quantity">Maximum number of occupants per floors *</label>
+								<input required type="number" min="0" id="hybrid_occupants" require/>
 							</div>
 
 							<div class="col-md-4">
-								<label for="hours:quantity">Activity hours per day *</label>
-								<input type="text" value="" class="form-control" name="contact[hybrid][required]" id="contact:hybrid">
+								<label for="hours_quantity">Activity hours per day *</label>
+								<input required type="number" min="0" id="hybrid_hours" require/>
 						</div>
 					</section>
 						<!-- hybrid -->
 		
 		
 		
-							<!-- PAYMENT METHOD -->
+							<!-- gammes -->
 							<fieldset class="box-border-shadow p-20">
 
-								<h4>CHOOSE YOUR SETUP</h4>
+							<h4>CHOOSE YOUR SETUP</h4>
 
 								<div class="toggle-transparent toggle-bordered-full clearfix">
-									<div class="toggle active">
+									<div class="toggle active"> 
 										<div class="toggle-content">
 
+											<!-- basic services -->
 											<div class="row m-0-bottom">
 												<div class="col-lg-12 m-0 clearfix">
-													<label class="mt-0 fs-14 fw-400 radio float-left m-0-top">
-														<input id="payment_check" name="payment[method]" type="radio" value="1" checked="checked" />
+													<label class="mt-0 fs-14 fw-400 radio float-left">
+														<input id="standard" name="payment[method]" type="radio" value="1" checked="checked" />
 														<i></i> <span class="fw-300">Standard setup</span>
 													</label>
 												</div>
+											<!-- basic services -->
+
+											<!-- premium services -->
 												<div class="col-lg-12 m-0 clearfix">
 													<label class="mt-0 fs-14 fw-400 radio float-left">
-														<input id="payment_card" name="payment[method]" type="radio" value="2" />
+														<input id="premium" name="payment[method]" type="radio" value="1" checked="checked" />
 														<i></i> <span class="fw-300">Premium setup</span>
 													</label>
 												</div>
+												<!-- premium services -->
+
+												<!--excelium services-->
 												<div class="col-lg-12 m-0 clearfix">
-														<label class="mt-0 fs-14 fw-400 radio float-left m-0-top">
-															<input id="payment_check" name="payment[method]" type="radio" value="1" checked="checked" />
-															<i></i> <span class="fw-300">Excelium setup</span>
-														</label>
-													</div>
+													<label class="mt-0 fs-14 fw-400 radio float-left">
+														<input id="excelium" name="payment[method]" type="radio" value="0" checked="checked" />
+														<i></i> <span class="fw-300">Excelium setup</span>
+													</label>
+												</div>
+												<!-- excelium services -->
 											</div>
 										
 										</div>
-									</div>
+									</div> 
 								</div>
 							</fieldset>
 
@@ -364,10 +364,15 @@
 							<div class="toggle-transparent toggle-bordered-full clearfix">
 								<div class="toggle active">
 									<div class="toggle-content">
-										
+
+										<span class="clearfix">
+											<span class="float-right fs-20">$128.75</span>
+											<strong class="float-left">Number of elevators:</strong>
+										</span>
+
 										<span class="clearfix">
 											<span class="float-right">$120.75</span>
-											<strong class="float-left">Subtotal:</strong>
+											<span class="float-left">Subtotal:</span>
 										</span>
 										<span class="clearfix">
 											<span class="float-right">$0.00</span>
@@ -492,6 +497,7 @@
 		<script>var plugin_path = 'assets/plugins/';</script>
 		<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
 		<script src="assets/js/questions.js"></script>
+		
 		<script src="assets/js/scripts.js"></script>
 
 				
