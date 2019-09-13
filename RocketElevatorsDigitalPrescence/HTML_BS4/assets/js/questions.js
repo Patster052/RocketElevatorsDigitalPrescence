@@ -3,6 +3,7 @@
 $(document).ready(function () {
 
 
+    
     $("#building_type").change(function () {
         var type = $(this).val();
         if (type == "residential") {
@@ -26,21 +27,20 @@ $(document).ready(function () {
 
 function QuantityResidential(gamme) {
 
-    
+
     var Appartments = $("#residential_appartments").val();
     var Floors = $("#residential_floors").val();
-    if( document.querySelector('input[name="setup"]:checked') ) {
+    if (document.querySelector('input[name="setup"]:checked')) {
         selected_price_range = document.querySelector('input[name="setup"]:checked').value;
         console.log("selected_price_range", selected_price_range);
-    }
-    else {
+    } else {
         selected_price_range = 0;
     }
     var average_units = (Appartments / Floors);
     console.log("average_units", average_units);
 
     var res_elevators = Math.ceil(average_units / 6);
-    console.log("res_elevators ", res_elevators );
+    console.log("res_elevators ", res_elevators);
 
     var res_shafts = Math.ceil(Floors / 20);
     console.log("res_shafts", res_shafts)
@@ -49,40 +49,38 @@ function QuantityResidential(gamme) {
     console.log("price", price);
     $("#totalelevators").html(res_elevators)
 
-    printPrice (gamme, price)
+    printPrice(gamme, price)
 }
 
 function QuantityCommercial(gamme) {
 
     com_elevator = $("#commercial_shaft").val();
-    console.log("com_elevator",com_elevator);
-    if( document.querySelector('input[name="setup"]:checked') ) {
+    console.log("com_elevator", com_elevator);
+    if (document.querySelector('input[name="setup"]:checked')) {
         selected_price_range = document.querySelector('input[name="setup"]:checked').value;
         console.log("selected_price_range", selected_price_range);
-    }   
-    else {
+    } else {
         selected_price_range = 0;
     }
     var price = com_elevator * selected_price_range;
     console.log("price", price)
 
-    printPrice (gamme, price)
+    printPrice(gamme, price)
 }
 
-function QuantityCorporate(gamme)  {
+function QuantityCorporate(gamme) {
 
     var corp_max_occupants = parseInt($("#corporate_occupants").val());
     var corp_floors = parseInt($("#corporate_floors").val());
     var corp_parkings = parseInt($("#corporate_parkings").val());
 
-    if( document.querySelector('input[name="setup"]:checked') ) {
+    if (document.querySelector('input[name="setup"]:checked')) {
         selected_price_range = document.querySelector('input[name="setup"]:checked').value;
         console.log("selected_price_range", selected_price_range);
-    }   
-    else {
+    } else {
         selected_price_range = 0;
     }
-        
+
     var corp_floors_total = Math.ceil(corp_floors + corp_parkings)
     console.log("corp_floors_total", corp_floors_total)
 
@@ -103,11 +101,11 @@ function QuantityCorporate(gamme)  {
 
     $("#totalelevators").html(corp_total_elevators)
 
-    printPrice (gamme, price)
+    printPrice(gamme, price)
 
 }
 
-function QuantityHybrid (gamme, elevatorstotal) {
+function QuantityHybrid(gamme, elevatorstotal) {
 
 
 
@@ -115,14 +113,13 @@ function QuantityHybrid (gamme, elevatorstotal) {
     var hyb_floors = parseInt($("#hybrid_floors").val());
     var hyb_parkings = parseInt($("#hybrid_parkings").val());
 
-    if( document.querySelector('input[name="setup"]:checked') ) {
+    if (document.querySelector('input[name="setup"]:checked')) {
         selected_price_range = document.querySelector('input[name="setup"]:checked').value;
         console.log("selected_price_range", selected_price_range);
-    }   
-    else {
+    } else {
         selected_price_range = 0;
     }
-   
+
     var hyb_floors_total = Math.ceil(hyb_floors + hyb_parkings)
     console.log("hyb_floors_total", hyb_floors_total)
 
@@ -143,13 +140,13 @@ function QuantityHybrid (gamme, elevatorstotal) {
 
     $("#totalelevators").html(hyb_total_elevators)
 
-    printPrice (gamme, price, elevatorstotal)
+    printPrice(gamme, price, elevatorstotal)
 }
 
-const printPrice = function (gamme, price,) {
+const printPrice = function (gamme, price, ) {
 
     console.log("printPrice");
-    var installation =  gamme == "standard" ? parseFloat(price * 0.10) : gamme == "premium" ? parseFloat(price *  0.13) : parseFloat(price * 0.16) ;
+    var installation = gamme == "standard" ? parseFloat(price * 0.10) : gamme == "premium" ? parseFloat(price * 0.13) : parseFloat(price * 0.16);
     var gamme_standard = parseFloat(price * 0.10);
     if (gamme == 'standard') console.log("gamme_standard", gamme_standard);
     var gamme_premium = parseFloat(price * 0.13);
@@ -162,10 +159,11 @@ const printPrice = function (gamme, price,) {
     $("#grandtotal").html(price + installation);
     // $("#totalelevators").html(elevatorstotal);
     console.log("price");
-    
-       
- }
- function pricetotal(gamme) {
+
+
+}
+
+function pricetotal(gamme) {
     console.log(gamme);
     console.log("pricetotal");
     var type = $("#building_type").val();
@@ -179,45 +177,4 @@ const printPrice = function (gamme, price,) {
     } else if (type == "corporate") {
         QuantityCorporate(gamme);
     }
- }
-
-
-
-
-// function elevatorstotals(totalelevators){
-
-//     console.log("elevatortotals", elevatortotals);
-
-//     var type = $("totalelevators").val();
-//     if (type == "res_elevators"){
-
-//     }
-//     else if (type == "com_shaft"){
-
-//     }
-//     else if (type == " corp_total_elevators "){
-
-//     }
-//     else if (type == "hyb_total_elevators "){
-
-//     }
-    
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
