@@ -221,11 +221,11 @@
 					<div id = "residential" style="display:none"> 
 						<div class="col-md-4">
 								<label for="apartments_quantity">How many apartments? *</label>
-								<input required type="number" onchange="QuantityResidential()" min="0" id="residential_appartments"required/>
+								<input required type="number" onkeyup="QuantityResidential(gamme)" min="0" id="residential_appartments"required/>
 							</div>
 							<div class="col-md-4">
 								<label for="floors_quantity">How many floors? *</label>
-								<input required type="number" onchange="QuantityResidential()" min="0" id="residential_floors"required/>
+								<input required type="number" onkeyup="QuantityResidential(gamme)" min="0" id="residential_floors"required/>
 							</div>
 							<div class="col-md-4">
 								<label for="basements_quantity">How many basements? *</label>
@@ -256,7 +256,7 @@
 							</div>
 							<div class="col-md-4">
 								<label for="shaft_quantity">How many elevator shafts? *</label>
-								<input required type="number" onchange="QuantityCommercial()" min="0" id="commercial_shaft" required/>
+								<input required type="number" onkeyup="QuantityCommercial(gamme)" min="0" id="commercial_shaft" required/>
 							</div>
 						</div>	
 				<!--commercial -->
@@ -269,15 +269,15 @@
 							</div>
 							<div class="col-md-4">
 								<label for="floors_quantity">How many floors *</label>
-								<input required type="number" onchange="QuantityCorporate()" min="0" id="corporate_floors" required/>
+								<input required type="number" onkeyup="QuantityCorporate(gamme)" min="0" id="corporate_floors" required/>
 							</div>
 							<div class="col-md-4">
 								<label for="parking_quantity">How many parking spots? *</label>
-								<input required type="number" min="0" onchange="QuantityCorporate()" id="corporate_parkings" required/>
+								<input required type="number" onkeyup="QuantityCorporate(gamme)" min="0" id="corporate_parkings" required/>
 							</div>
 							<div class="col-md-4">
 								<label for="occupants_quantity">Maximum number of occupants per floors *</label>
-								<input required type="number" onchange="QuantityCorporate()" min="0" id="corporate_occupants" required/>
+								<input required type="number" onkeyup="QuantityCorporate(gamme)" min="0" id="corporate_occupants" required/>
 						</div>
 					</div>	
 					<!-- corporate -->
@@ -290,20 +290,20 @@
 							</div>
 							<div class="col-md-4">
 								<label for="floors_quantity">How many floors? *</label>
-								<input required type="number" onchange="QuantityHybrid()" min="0" id="hybrid_floors" require/>
+								<input required type="number" onkeyup="QuantityHybrid(gamme)" min="0" id="hybrid_floors" require/>
 							</div>
 							<div class="col-md-4">
 								<label for="parkings_quantity">How many parking spots? *</label>
-								<input required type="number" onchange="QuantityHybrid()" min="0" id="hybrid_parkings" require/>
+								<input required type="number" onkeyup="QuantityHybrid(gamme)" min="0" id="hybrid_parkings" require/>
 							</div>
 							<div class="col-md-4">
 								<label for="occupants_quantity">Maximum number of occupants per floors *</label>
-								<input required type="number" onchange="QuantityHybrid()" min="0" id="hybrid_max_occupants" require/>
+								<input required type="number" onkeyup="QuantityHybrid(gamme)" min="0" id="hybrid_max_occupants" require/>
 							</div>
 
 							<div class="col-md-4">
 								<label for="hours_quantity">Activity hours per day *</label>
-								<input required type="number" onchange="QuantityHybrid()" min="0" id="hybrid_hours" require/>
+								<input required type="number" onkeyup="QuantityHybrid(gamme)" min="0" id="hybrid_hours" require/>
 						</div>
 					</section>
 						<!-- hybrid -->
@@ -312,9 +312,9 @@
 		
 					<!-- gammes -->
 						<fieldset class="box-border-shadow p-20">
-
+						
 							<h4>CHOOSE YOUR SETUP</h4>
-
+							<div id = "gamme">
 								<div class="toggle-transparent toggle-bordered-full clearfix">
 									<div class="toggle active"> 
 										<div class="toggle-content">
@@ -323,7 +323,7 @@
 											<div class="row m-0-bottom">
 												<div class="col-lg-12 m-0 clearfix">
 													<label class="mt-0 fs-14 fw-400 radio float-left">
-														<input id="standard" onchange="PriceRange()" type="radio" name="setup" value="7565"/>
+														<input id="standard" onchange="pricetotal('standard')" type="radio" name="setup" value="7565"/>
 														<i></i> <span class="fw-300">Standard setup</span>
 													</label>
 												</div>
@@ -332,7 +332,7 @@
 											<!-- premium services -->
 												<div class="col-lg-12 m-0 clearfix">
 													<label class="mt-0 fs-14 fw-400 radio float-left">
-														<input id="premium" onchange="PriceRange()" type="radio" name="setup" value="12345"/>
+														<input id="premium" onchange="pricetotal('premium')" type="radio" name="setup" value="12345"/>
 														<i></i> <span class="fw-300">Premium setup</span>
 													</label>
 												</div>
@@ -341,7 +341,7 @@
 												<!--excelium services-->
 												<div class="col-lg-12 m-0 clearfix">
 													<label class="mt-0 fs-14 fw-400 radio float-left">
-														<input id="excelium" onchange="PriceRange()" type="radio" name="setup" value="15400"/>
+														<input id="excelium" onchange="pricetotal('excelium')" type="radio" name="setup" value="15400"/>
 														<i></i> <span class="fw-300">Excelium setup</span>
 													</label>
 												</div>
@@ -351,10 +351,40 @@
 										</div>
 									</div> 
 								</div>
+								</div>
 							</fieldset>
 
 							<!-- TOTAL / PLACE ORDER -->
-							<div class="toggle-transparent toggle-bordered-full clearfix">
+
+
+							<!-- !-- TOTAL / PLACE ORDER -->
+                            <div class="toggle-transparent toggle-bordered-full clearfix">
+                                <div class="toggle active">
+
+										<span class="clearfix">
+												<span id="totalelevator"class="float-right fs-20"></span>
+												<strong class="float-left">Total Elevators:</strong>
+											</span>
+											<hr/>
+                                    <div class="toggle-content">
+	                                        <span class="Premium setup">
+                                            <span class="float-left">Installation price:</span></span>
+                                            <span id="instal" class="float-right"><span id="installation-price" ></span>
+                                        </span>
+                                        <hr />
+                                        <span class="clearfix">
+                                            <span id="subtotal"class="float-right fs-20"></span>
+                                            <strong class="float-left">SUB-TOTAL:</strong>
+                                        </span>
+										<hr/>
+										<span class="clearfix">
+                                            <span id="grandtotal"class="float-right fs-20"></span>
+                                            <strong class="float-left">GRAND-TOTAL:</strong>
+                                        </span>
+                                        <hr/>
+
+
+							<!-- <div class="toggle-transparent toggle-bordered-full clearfix">
 								<div class="toggle active">
 									<div class="toggle-content">
 
@@ -388,7 +418,7 @@
 									</div>
 								</div>
 							</div>
-							<!-- /TOTAL / PLACE ORDER -->
+							/TOTAL / PLACE ORDER -->
 
 			<!-- FOOTER -->
 				<footer id="footer">
