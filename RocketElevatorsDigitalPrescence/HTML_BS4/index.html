@@ -95,32 +95,6 @@
 		<!-- wrapper -->
 		<div id="wrapper">
 
-			<!-- 
-				AVAILABLE HEADER CLASSES
-
-				Default nav height: 96px
-				.header-md 		= 70px nav height
-				.header-sm 		= 60px nav height
-
-				.b-0 		= remove bottom border (only with transparent use)
-				.transparent	= transparent header
-				.translucent	= translucent header
-				.sticky			= sticky header
-				.static			= static header
-				.dark			= dark header
-				.bottom			= header on bottom
-				
-				shadow-before-1 = shadow 1 header top
-				shadow-after-1 	= shadow 1 header bottom
-				shadow-before-2 = shadow 2 header top
-				shadow-after-2 	= shadow 2 header bottom
-				shadow-before-3 = shadow 3 header top
-				shadow-after-3 	= shadow 3 header bottom
-
-				.clearfix		= required for mobile menu, do not remove!
-
-				Example Usage:  class="clearfix sticky header-sm transparent b-0"
-			-->
 			<div id="header" class="navbar-toggleable-md sticky header-md clearfix">
 
 				<!-- TOP NAV -->
@@ -140,8 +114,7 @@
 						<!-- 
 							Top Nav 
 							
-							AVAILABLE CLASSES:
-							submenu-dark = dark sub menu
+							
 						-->
 						<div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
 							<nav class="nav-main">
@@ -975,27 +948,7 @@
 					<div class="heading-title heading-dotted text-center">
 						<h2>News</h2>
 					</div>
-
-					<!-- 
-						controlls-over		= navigation buttons over the image 
-						buttons-autohide 	= navigation buttons visible on mouse hover only
-						
-						data-plugin-options:
-							"singleItem": true
-							"autoPlay": true (or ms. eg: 4000)
-							"navigation": true
-							"pagination": true
-							"items": "4"
-
-						owl-carousel item paddings
-							.owl-padding-0
-							.owl-padding-3
-							.owl-padding-6
-							.owl-padding-10
-							.owl-padding-15
-							.owl-padding-20
-					-->
-					<div class="owl-carousel owl-padding-10 buttons-autohide controlls-over" data-plugin-options='{"singleItem": false, "items":"4", "autoPlay": 4000, "navigation": true, "pagination": false}'>
+						<div class="owl-carousel owl-padding-10 buttons-autohide controlls-over" data-plugin-options='{"singleItem": false, "items":"4", "autoPlay": 4000, "navigation": true, "pagination": false}'>
 						<div class="img-hover">
 							<a href="https://www.theguardian.com/commentisfree/2019/sep/05/new-york-fear-elevators">
 								<img class="img-fluid" src="demo_files/Rocket_Elevator_Assets/scared elevators.jpg" style="width:350px;height:175px" alt="">
@@ -1152,33 +1105,8 @@
 						<div class="col-md-8 col-sm-8">
 
 							<h3><strong>Fell free to reach us though our online form.</strong></h3>
-
-							
-							<!--
-								MESSAGES
-								
-									How it works?
-									The form data is posted to php/contact.php where the fields are verified!
-									php.contact.php will redirect back here and will add a hash to the end of the URL:
-										#alert_success 		= email sent
-										#alert_failed		= email not sent - internal server error (404 error or SMTP problem)
-										#alert_mandatory	= email not sent - required fields empty
-										Hashes are handled by assets/js/contact.js
-
-									Form data: required to be an array. Example:
-										contact[email][required]  WHERE: [email] = field name, [required] = only if this field is required (PHP will check this)
-										Also, add `required` to input fields if is a mandatory field. 
-										Example: <input required type="email" value="" class="form-control" name="contact[email][required]">
-
-									PLEASE NOTE: IF YOU WANT TO ADD OR REMOVE FIELDS (EXCEPT CAPTCHA), JUST EDIT THE HTML CODE, NO NEED TO EDIT php/contact.php or javascript
-												 ALL FIELDS ARE DETECTED DINAMICALY BY THE PHP
-
-									WARNING! Do not change the `email` and `name`!
-												contact[name][required] 	- should stay as it is because PHP is using it for AddReplyTo (phpmailer)
-												contact[email][required] 	- should stay as it is because PHP is using it for AddReplyTo (phpmailer)
-							-->
-
-							<!-- Alert Success -->
+						
+						<!-- Alert Success -->
 							<div id="alert_success" class="alert alert-success mb-30">
 								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 								<strong>Thank You!</strong> Your message successfully sent!
@@ -1284,20 +1212,7 @@
 
 							<h2>Visit Us</h2>
 
-							<!-- 
-							Available heights
-								h-100
-								h-150
-								h-200
-								h-250
-								h-300
-								h-350
-								h-400
-								h-450
-								h-500
-								h-550
-								h-600
-							-->
+							
 							<div id="map2" class="h-400 grayscale"></div>
 
 							<hr />

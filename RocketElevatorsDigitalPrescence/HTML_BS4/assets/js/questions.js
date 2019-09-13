@@ -1,6 +1,4 @@
 //question and answer
-//  var selected_range; 
-
 
 $(document).ready(function () {
 
@@ -49,6 +47,7 @@ function QuantityResidential(gamme) {
 
     var price = res_elevators * res_shafts * selected_price_range
     console.log("price", price);
+    $("#totalelevators").html(res_elevators)
 
     printPrice (gamme, price)
 }
@@ -102,11 +101,13 @@ function QuantityCorporate(gamme)  {
     price = corp_shaft_total * corp_total_elevators * selected_price_range;
     console.log("price", price);
 
+    $("#totalelevators").html(corp_total_elevators)
+
     printPrice (gamme, price)
 
 }
 
-function QuantityHybrid (gamme) {
+function QuantityHybrid (gamme, elevatorstotal) {
 
 
 
@@ -140,10 +141,12 @@ function QuantityHybrid (gamme) {
     price = hyb_shaft_total * hyb_total_elevators * selected_price_range;
     console.log("price", price)
 
-    printPrice (gamme, price)
+    $("#totalelevators").html(hyb_total_elevators)
+
+    printPrice (gamme, price, elevatorstotal)
 }
 
-const printPrice = function (gamme, price) {
+const printPrice = function (gamme, price,) {
 
     console.log("printPrice");
     var installation =  gamme == "standard" ? parseFloat(price * 0.10) : gamme == "premium" ? parseFloat(price *  0.13) : parseFloat(price * 0.16) ;
@@ -156,8 +159,11 @@ const printPrice = function (gamme, price) {
 
     $("#installation-price").html(installation);
     $("#subtotal").html(price);
-    // $("#grandtotal").html(price);
-    console.log(price);
+    $("#grandtotal").html(price + installation);
+    // $("#totalelevators").html(elevatorstotal);
+    console.log("price");
+    
+       
  }
  function pricetotal(gamme) {
     console.log(gamme);
@@ -178,6 +184,25 @@ const printPrice = function (gamme, price) {
 
 
 
+// function elevatorstotals(totalelevators){
+
+//     console.log("elevatortotals", elevatortotals);
+
+//     var type = $("totalelevators").val();
+//     if (type == "res_elevators"){
+
+//     }
+//     else if (type == "com_shaft"){
+
+//     }
+//     else if (type == " corp_total_elevators "){
+
+//     }
+//     else if (type == "hyb_total_elevators "){
+
+//     }
+    
+// }
 
 
 
@@ -194,71 +219,5 @@ const printPrice = function (gamme, price) {
 
 
 
-// // function pricetotal()
-// //  {
-// //     console.log("pricetotal")  
-
-// //     var type = $("#building_type").val();
-// //     console.log("type", type);
-
-// //     if  (type == "residential") {
-// //         QuantityResidential();
-// //          }
-// //      else if ( type == "commercial") {
-// //         QuantityCommercial();
-// //          }
-// //     else if ( type == "corporate") {
-// //         QuantityCorporate();
-// //          }
-// //      else if ( type == "hybrid") {
-// //         QuantityHybrid();
-// //         }
-// //     }
-
-// //   function installation_cost()  
-
-// //     console.log("installation_cost",installation_cost)
-
-// //     var type = $ ("#selected_type_range").val;
-
-// //     if ( type == "standard"){
-// //         then ("standard * 1.10");
-// //     }
-// //     else if ( type == "premium"){
-// //         then ("premium * 1.13");
-// //     }
-// //     else if ( type == "excelium"){
-// //         then ("excelium * 1.16");
-// //    }
 
 
-   
-
-// // // function PriceRange() {
-// //     selected_range = document.querySelector('input[name="setup"]:checked').value;
-// //     console.log("selected_range", selected_range);
-// //     // calc()
-// // }
-
-// // function Installation() {
-
-// //     category = document.querySelector('input[name="setup"]:checked').value;
-
-
-
-
-// //         //    if(document.querySelector('input[name="setup"]:checked')) {
-// //         //            var installation_price = null;
-// //         //            var installation_price_float = null;
-// //         //            var selected_installation = document.querySelector('input[name="setup"]:checked').value
-// //         //            //console.log("selected_installation", selected_installation);
-
-
-// //                    if( selected_range == "standard") {
-// //                            installation_price_float = 1.10;
-// //                    }else if( selected_range == "premium") {
-// //                             installation_price_float = 1.13;
-// //                    }else if( selected_range == "excelium") {
-// //                             installation_price_float = 1.16;
-// //                    }
-// //                 
