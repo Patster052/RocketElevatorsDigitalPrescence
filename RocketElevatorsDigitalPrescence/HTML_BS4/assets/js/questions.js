@@ -3,7 +3,6 @@
 $(document).ready(function () {
 
 
-    
     $("#building_type").change(function () {
         var type = $(this).val();
         if (type == "residential") {
